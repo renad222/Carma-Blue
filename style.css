@@ -1,0 +1,234 @@
+@font-face{
+    font-family: 'Rebrand Medium';
+    src: url(fonts/Rebrand\ Dis\ Medium.ttf);
+}
+
+@font-face{
+    font-family: 'Henderson Bold';
+    src: url(fonts/Henderson\ Sans\ W00\ Basic\ SemiBd.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(12, 12, 76);
+    color: rgb(241, 239, 244);
+}
+
+header {
+    width:100%;
+    display: flex;
+    flex-wrap: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.logo img{
+        margin-top: 40px;
+        margin-right: 5px;
+        width: 60px;
+        height: 50px;
+}
+
+h1{
+    font-size: 50px;
+    margin-top: 18px;
+    font-family: 'Rebrand Medium', serif;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.image{
+    background-image: url(images/image-2.png);
+    width: 400px;
+    height:400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:contain ;
+    margin: auto;
+    margin-top: 10px;
+    margin-left: 580px;
+}
+
+.message{
+    font-family: 'Henderson Bold';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    margin:auto;
+    text-align: center;
+    margin-left: 20px;
+}
+
+.btn{
+    width: fit-content;
+    margin: auto;
+    margin-top: 40px;
+    margin-left: 720px;
+}
+
+button{
+    font-family: 'Henderson Bold';
+    background-color: rgb(28, 28, 229);
+    color: rgb(241, 239, 244);
+    border-radius: 15px;
+    /*padding: 10px 30px;
+    font-size: 13px*/
+    border: none;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 12px 33px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+button:hover{
+    transition: 0.4s;
+    box-shadow: 3px 3px rgb(241, 239, 244);
+}
+
+@media (max-width: 768px) {
+    header {
+      flex-direction: row; 
+      text-align: center; 
+      margin-top: 20px;
+    }
+  
+    .logo img {
+      margin-top: 20px; 
+      width: 40px; 
+      height: auto;
+      margin-right: 5px;
+    }
+  
+    h1 {
+      font-size: 30px; 
+      margin-top: 7px;
+    }
+  
+    .image {
+      width: 300px; 
+      height: 300px; 
+      margin: auto;
+      margin-top: 80px;
+      margin-left: auto; 
+      margin-right: auto;
+    }
+  
+    .message {
+      font-size: 16px; 
+      margin: auto;
+      text-align: center;
+      margin-left: 0;
+      margin-top: 30px;
+    }
+  
+    .btn {
+      width: fit-content;
+      margin: auto;
+      margin-top: 50px; 
+      margin-left: auto; 
+      margin-right: auto;
+    }
+    
+    button {
+      font-size: 14px; 
+      padding: 10px 25px; 
+    }
+  }
+  
+@media (min-width: 768px) and (max-width: 1535px) {
+    header {
+      flex-direction: row; 
+      margin-top: 50px;
+    }
+  
+    .logo img {
+      margin-top: 20px;
+      width: 40px;
+      height: auto;
+      margin-right: 5px;
+    }
+  
+    h1 {
+      font-size: 40px; 
+      margin-top: 7px;
+    }
+  
+    .image {
+      width: 350px; 
+      height: 350px; 
+      margin: auto;
+      margin-top: 80px;
+    }
+  
+    .message {
+      font-size: 18px; 
+      text-align: center;
+      margin-top: 30px;
+    }
+  
+    .btn {
+      width: fit-content;
+      margin: auto;
+      margin-top: 50px; 
+      margin-left: auto; 
+      margin-right: auto;
+    }
+    
+    button {
+      font-size: 14px; 
+      padding: 10px 25px; 
+    }
+  }
+
+ 
+@media (min-width: 1800px) {
+    header {
+        flex-direction: row; 
+        text-align: center;  
+        margin-top: 30px;
+        padding: 20px;
+    }
+  
+    .logo img {
+      width: 150px; 
+      height: auto; 
+      margin-top: 80px; 
+      margin-right: 19px;
+    }
+  
+    h1 {
+        font-size: 150px;
+        margin-top: 25px;
+    }
+  
+    .image {
+      width: 900px;
+      height: 900px;
+      margin: auto;
+      margin-top: 100px;
+    }
+  
+    .message {
+      font-size: 50px;
+      margin-top: 20px; 
+    }
+  
+    .btn {
+      margin-top: 80px;
+      width: fit-content; 
+      margin-left: auto; 
+      margin-right: auto;
+    }
+    
+    button {
+      font-size: 40px;
+      padding: 30px 50px;
+    }
+  }
+  
+  

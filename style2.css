@@ -1,0 +1,151 @@
+@font-face {
+    font-family: 'Rebrand Medium';
+    src: url(fonts/Rebrand\ Dis\ Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Henderson';
+    src: url(fonts/Henderson\ Sans.otf);
+}
+
+@font-face {
+    font-family: 'Henderson Bold';
+    src: url(fonts/Henderson\ Sans\ W00\ Basic\ SemiBd.ttf);
+}
+
+*{
+    margin: 0;
+    padding:0;
+    background-color: rgb(241, 239, 244);
+    color: rgb(12, 12, 76);
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+  }
+
+header {
+    width:100%;
+    display: flex;
+    flex-wrap: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+.logo img{
+        margin-top: 40px;
+        margin-right: 5px;
+        width: 60px;
+        height: 50px;
+     }
+
+h1{
+    font-size: 50px;
+    margin-top: 18px;
+    font-family: 'Rebrand Medium', serif;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.container {
+    font-family: 'Henderson';
+    font-style: normal;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    margin: 0;
+    max-width: 100%;
+  }
+
+.info{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.info label{
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-left: 12px;
+}
+
+.info input{
+    border:2px solid rgb(12, 12, 76);
+    border-radius: 10px;
+    display: block;
+    font-size: 15px;
+    padding: 7px;
+    width: 330px;
+    margin: 0 auto;
+}
+
+.info.success input{
+    border-color: green;
+}
+
+.info.error input{
+    border-color: #c62918;
+}
+
+.info i{
+    position: absolute;
+    top:40px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.info.success i.fa-circle-check{
+  visibility: visible;
+  color: green;
+}
+
+.info.error i.fa-circle-exclamation{
+    visibility: visible;
+    color: #c62918;
+  }
+
+.info small{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    visibility: hidden;
+}
+
+.info.error small{
+    visibility: visible;
+    color: #c62918;
+    margin-left: 12px;
+}
+
+.btn-container{
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn{
+    width: fit-content;
+    display: inline-block;
+}
+
+.form button{
+    font-family: 'Henderson Bold';
+    background-color: rgb(28, 28, 229);
+    color: rgb(241, 239, 244);
+    border-radius: 15px;
+    padding: 12px 33px;
+    border: none;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin: auto;
+}
+
+.form button:hover{
+    box-shadow: 4px 4px rgb(12, 12, 76);
+}
