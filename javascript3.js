@@ -1,3 +1,6 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+
 const firebaseConfig = {
     apiKey: "your-api-key",
     authDomain: "your-auth-domain",
@@ -7,8 +10,8 @@ const firebaseConfig = {
     appId: "your-app-id"
   };
   
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.database();
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
   
   const form = document.getElementById('form');
   const salary = document.getElementById('salary');
@@ -17,40 +20,22 @@ const firebaseConfig = {
   const startdate = document.getElementById('startdate');
   
   form.addEventListener('submit', e => {
-      e.preventDefault();
-      checkInputs();
-  
-      // Check if there are any error messages to stop the button from submitting
-      const errorElements = document.querySelectorAll('.error');
-      if (errorElements.length === 0) {
-          // Save the form data to Firebase if there are no errors
-          saveFormData();
-      }
-  });
+    e.preventDefault();
+    checkInputs();
 
-//using generic validation functions to make it easier unlike code before
-// Getting values from the input and putting validation function as an argument too
-function checkInputs() {
-    validateInput(salary, 'Salary', isValidAmount);
-    validateInput(monthly, 'Monthly Obligation', isValidAmount);
-    validateInput(yearlyrent, 'Yearly Rent Amount', isValidAmount);
-    validateInput(startdate, 'Rent Start Date', isValidDate);
-}
-
-// Checks for error and shows message if found and trims whitespace
-function validateInput(input, fieldName, validator) {
-    const inputValue = input.value.trim();
-    if (inputValue === '') {
-        setErrorFor(input, `${fieldName} cannot be blank`);
-    } else if (!validator(inputValue)) {
-        setErrorFor(input, `Invalid ${fieldName}.`);
-    } else {
-        setSuccessFor(input);
+    if (document.querySelectorAll('.error').length === 0) {
+        saveFormData()
+            .then(() => {
+                window.location.href = 'index4.html';
+            })
+            .catch(error => {
+                console.error('Error saving data:', error);
+            });
     }
-}
+});
 
-function saveFormData() {
-    const formDataRef = db.ref('form_data_second');
+async function saveFormData() {
+    const formDataRef = ref(database, 'form_data_second');
 
     const salaryValue = salary.value.trim();
     const monthlyValue = monthly.value.trim();
@@ -64,10 +49,13 @@ function saveFormData() {
         startdate: startdateValue
     };
 
-    formDataRef.push(formData);
-
-    // Optionally, you can redirect to the next page after saving the data
-    window.location.href = 'index4.html';
+    try {
+        await push(formDataRef, formData);
+        console.log('Data saved successfully');
+    } catch (error) {
+        console.error('Error saving data:', error);
+        throw error;
+    }
 }
 
 // Function to set error
