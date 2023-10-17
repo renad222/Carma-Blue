@@ -37,6 +37,13 @@ form.addEventListener('submit', e => {
     }
 });
 
+function checkInputs() {
+    validateFirstName();
+    validateLastName();
+    validateEmail();
+    validatePhone();
+}
+
 async function saveFormData() {
     const formData = {
         firstname: firstname.value.trim(),
