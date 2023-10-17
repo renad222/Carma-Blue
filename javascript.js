@@ -1,17 +1,17 @@
- import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
- import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
-    
- const firebaseConfig = {
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+
+const firebaseConfig = {
     apiKey: "AIzaSyDDd4fWG6CTtjRcbsP-MDBKAToM2ya9IUs",
-          authDomain: "carma-blue-6991e.firebaseapp.com",
-          projectId: "carma-blue-6991e",
-          storageBucket: "carma-blue-6991e.appspot.com",
-          messagingSenderId: "288486090590",
-          appId: "1:288486090590:web:b05a34e6fdecee9fd891cf"
+    authDomain: "carma-blue-6991e.firebaseapp.com",
+    projectId: "carma-blue-6991e",
+    storageBucket: "carma-blue-6991e.appspot.com",
+    messagingSenderId: "288486090590",
+    appId: "1:288486090590:web:b05a34e6fdecee9fd891cf"
 };
-      
+
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app); // initialize the firebase realtime database
+const database = getDatabase(app);
 
 const form = document.getElementById('form');
 const firstname = document.getElementById('firstname');
@@ -25,23 +25,19 @@ form.addEventListener('submit', e => {
 
     // After input validation, save the data and navigate to the next page if there are no errors
     if (document.querySelectorAll('.error').length === 0) {
-        saveFormData();
-        window.location.href = 'index3.html';
+        saveFormData()
+            .then(() => {
+                // Data saved successfully, navigate to the next page
+                window.location.href = 'index3.html';
+            })
+            .catch(error => {
+                // Handle errors here, e.g., display an error message to the user
+                console.error('Error saving data:', error);
+            });
     }
 });
 
-function checkInputs() {
-    validateFirstName();
-    validateLastName();
-    validateEmail();
-    validatePhone();
-    // After input validation, save the data if there are no errors
-    if (document.querySelectorAll('.error').length === 0) {
-        saveFormData();
-    }
-}
-
-function saveFormData() {
+async function saveFormData() {
     const formData = {
         firstname: firstname.value.trim(),
         lastname: lastname.value.trim(),
@@ -51,13 +47,12 @@ function saveFormData() {
 
     const dataRef = ref(database, 'formResponses');
 
-    push(dataRef, formData)
-        .then(() => {
-            console.log('Data saved successfully');
-        })
-        .catch(error => {
-            console.error('Error saving data:', error);
-        });
+    try {
+        await push(dataRef, formData);
+        console.log('Data saved successfully');
+    } catch (error) {
+        throw error;
+    }
 }
 
 // Function to set error
