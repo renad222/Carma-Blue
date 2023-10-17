@@ -76,7 +76,7 @@ function setErrorFor(input, message) {
     const small = information.querySelector('small');
     small.innerText = message;
     information.classList.remove('success');
-    information.classList add('error');
+    information.classList.add('error');
 }
 
 // Shows success (green color and check) when the condition is met
