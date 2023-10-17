@@ -7,8 +7,9 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="style2.css">
     <script src="https://kit.fontawesome.com/be3c06b7f7.js" crossorigin="anonymous"></script>
-    <script type="module">
+    <script defer src="javascript.js" type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
     
         const firebaseConfig = {
           apiKey: "AIzaSyDDd4fWG6CTtjRcbsP-MDBKAToM2ya9IUs",
@@ -72,8 +73,6 @@
             </div>
         </form>
    </div>
-
-<script defer src="javascript.js"></script>
 
 </body>
 </html>
