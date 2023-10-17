@@ -22,6 +22,8 @@ const phone = document.getElementById('phone');
 form.addEventListener('submit', e => {
     e.preventDefault();
     checkInputs();
+    // After saving data to Firebase, add code to navigate to the next page
+    window.location.href = 'index3.html';
 });
 
 function checkInputs() {
