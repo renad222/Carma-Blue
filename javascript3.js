@@ -2,17 +2,18 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebas
 import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDVo4nOWTUL7Xb2CLgRMI06deDER8FZuhQ",
-    authDomain: "carma-blue-709b4.firebaseapp.com",
-    databaseURL: "https://carma-blue-709b4-default-rtdb.firebaseio.com",
-    projectId: "carma-blue-709b4",
-    storageBucket: "carma-blue-709b4.appspot.com",
-    messagingSenderId: "823983056551",
-    appId: "1:823983056551:web:9523b724e13f97e23cdd82"
-  };
-  
-  const app = initializeApp(firebaseConfig);
-  const database = getDatabase(app);
+    apiKey: "AIzaSyDDd4fWG6CTtjRcbsP-MDBKAToM2ya9IUs",
+    authDomain: "carma-blue-6991e.firebaseapp.com",
+    projectId: "carma-blue-6991e",
+    storageBucket: "carma-blue-6991e.appspot.com",
+    messagingSenderId: "288486090590",
+    appId: "1:288486090590:web:b05a34e6fdecee9fd891cf"
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+const secondFormRef = database.ref("secondForm");
+
   
   const form = document.getElementById('form');
   const salary = document.getElementById('salary');
