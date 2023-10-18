@@ -34,6 +34,13 @@ const firebaseConfig = {
     }
 });
 
+function checkInputs() {
+    validateInput(salary, 'Salary', isValidAmount);
+    validateInput(monthly, 'Monthly Obligation', isValidAmount);
+    validateInput(yearlyrent, 'Yearly Rent Amount', isValidAmount);
+    validateInput(startdate, 'Rent Start Date', isValidDate);
+}
+
 async function saveFormData() {
     const formDataRef = ref(database, 'form_data_second');
 
