@@ -2,12 +2,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebas
 import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 
 const firebaseConfig = {
-    apiKey: "your-api-key",
-    authDomain: "your-auth-domain",
-    projectId: "your-project-id",
-    storageBucket: "your-storage-bucket",
-    messagingSenderId: "your-messaging-sender-id",
-    appId: "your-app-id"
+    apiKey: "AIzaSyDVo4nOWTUL7Xb2CLgRMI06deDER8FZuhQ",
+    authDomain: "carma-blue-709b4.firebaseapp.com",
+    databaseURL: "https://carma-blue-709b4-default-rtdb.firebaseio.com",
+    projectId: "carma-blue-709b4",
+    storageBucket: "carma-blue-709b4.appspot.com",
+    messagingSenderId: "823983056551",
+    appId: "1:823983056551:web:9523b724e13f97e23cdd82"
   };
   
   const app = initializeApp(firebaseConfig);
