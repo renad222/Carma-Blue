@@ -41,6 +41,17 @@ function checkInputs() {
     validateInput(startdate, 'Rent Start Date', isValidDate);
 }
 
+function validateInput(input, fieldName, validator) {
+    const inputValue = input.value.trim();
+    if (inputValue === '') {
+        setErrorFor(input, `${fieldName} cannot be blank`);
+    } else if (!validator(inputValue)) {
+        setErrorFor(input, `Invalid ${fieldName}.`);
+    } else {
+        setSuccessFor(input);
+    }
+}
+
 async function saveFormData() {
     const formDataRef = ref(database, 'form_data_second');
 
