@@ -55,25 +55,19 @@ function validateInput(input, fieldName, validator) {
 }
 
 async function saveFormData() {
-    const formDataRef = ref(database, 'form_data_second');
-
-    const salaryValue = salary.value.trim();
-    const monthlyValue = monthly.value.trim();
-    const yearlyrentValue = yearlyrent.value.trim();
-    const startdateValue = startdate.value.trim();
-
     const formData = {
-        salary: salaryValue,
-        monthly: monthlyValue,
-        yearlyrent: yearlyrentValue,
-        startdate: startdateValue
+        salary: salary.value.trim(),
+        monthly: monthly.value.trim(),
+        yearlyrent: yearlyrent.value.trim(),
+        startdate: startdate.value.trim()
     };
 
+    const dataRef = ref(database, 'form2Responses'); // Path for the second form
+
     try {
-        await push(formDataRef, formData);
+        await push(dataRef, formData);
         console.log('Data saved successfully');
     } catch (error) {
-        console.error('Error saving data:', error);
         throw error;
     }
 }

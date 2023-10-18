@@ -53,7 +53,7 @@ async function saveFormData() {
         phone: phone.value.trim()
     };
 
-    const dataRef = ref(database, 'formResponses');
+    const dataRef = ref(database, 'form1Responses'); // Path for the second form
 
     try {
         await push(dataRef, formData);
