@@ -12,8 +12,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
-const secondFormRef = database.ref("secondForm");
-
   
   const form = document.getElementById('form');
   const salary = document.getElementById('salary');
