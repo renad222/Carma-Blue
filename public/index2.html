@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carma-Blue</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <script src="https://kit.fontawesome.com/be3c06b7f7.js" crossorigin="anonymous"></script>
+    <script defer src="javascript.js" type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+    
+        const firebaseConfig = {
+          apiKey: "AIzaSyDDd4fWG6CTtjRcbsP-MDBKAToM2ya9IUs",
+          authDomain: "carma-blue-6991e.firebaseapp.com",
+          projectId: "carma-blue-6991e",
+          storageBucket: "carma-blue-6991e.appspot.com",
+          messagingSenderId: "288486090590",
+          appId: "1:288486090590:web:b05a34e6fdecee9fd891cf"
+        };
+      
+        const app = initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body>
+
+        <header>
+            <div class="logo">
+               <img src="images/image-3.png">
+            </div>
+            <h1>carma</h1>
+        </header>
+
+     <div class="container">
+
+        <form class="form" id="form" action="index3.html" method="GET" novalidate>
+            <div class="info">
+                <label for="firstname">First Name</label>
+                <input type="text" placeholder="First Name" id="firstname" autocomplete="given-name">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="info">
+                <label for="lastname">Last Name</label>
+                <input type="text" placeholder="Last Name" id="lastname" autocomplete="family-name">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="info">
+                <label for="email">Email</label>
+                <input type="email" placeholder="email" id="email" autocomplete="email">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="info">
+                <label for="phone">Phone Number</label>
+                <input type="number" placeholder="phone" id="phone" autocomplete="tel">
+                <i class="fa-solid fa-circle-check"></i>
+                <i class="fa-solid fa-circle-exclamation"></i>
+                <small>Error message</small>
+            </div>
+
+            <div class="btn-container">
+                <button class="btn" type="submit" value="submit">Next</button>
+            </div>
+        </form>
+   </div>
+
+</body>
+</html>
+  
